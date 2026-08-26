@@ -1,0 +1,10 @@
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.xlsx
+*.zip
+.DS_Store
+corpus/
