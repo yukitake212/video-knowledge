@@ -1,6 +1,6 @@
-# ハウススタイルブロック｜実写ドラマ調（書籍ティザー用）
+# ハウススタイルブロック｜実写ドラマ調（ティザー用）
 
-出版社案件で**毎回そのまま貼る固定文**。生成ごとに変えるのは ASSETS と SHOT だけ。
+ティザー案件で**毎回そのまま貼る固定文**。生成ごとに変えるのは ASSETS と SHOT だけ。
 撮影監督名・配色比率・Restraint節が案件ごとの差し替えポイント。
 
 ```
@@ -41,7 +41,7 @@ Composition: composed, quiet framing; off-centre and non-symmetrical, except whe
 formal symmetry is the subject (memorial, ceremony, formation). Negative space is
 allowed to carry the shot.
 
-Restraint: this is a book teaser. No impact, no wounds, no blood, no bodies. Violence is
+Restraint: this is a teaser. No impact, no wounds, no blood, no bodies. Violence is
 implied by its aftermath and by sound — a muzzle, a cut to black, an emptied street, a
 covered floor. Weapons may be present but are never fired into a person on camera.
 
@@ -59,9 +59,9 @@ shot explicitly scripts a line.
 - 案件のハウスプリセットとして**一字一句そのまま使い回す**。同一作者の別生成で完全一致を確認した
 - この骨格は個人の癖ではなく**界隈の共通様式**。別作者の別案件でも見出しの並びが一致している（Style / OPERATING STYLE / Light / Colour / Texture / Camera-Optics / Acting / Composition / Technical / Audio）。移植できる資産は中身ではなく骨格のほう
 - 撮影監督ハンドルの選択肢：
-  - **Roger Deakins** — 抑制と精度、単一光源、半分影の顔。刑事もの・法廷もの向き
+  - **Roger Deakins** — 抑制と精度、単一光源、半分影の顔
   - **Hoyte van Hoytema** — 大判の realism とハンドヘルドの近さ、靄と体積光。壮大・叙事的
   - **近藤龍人** — 日本の室内と自然光のリアリズム。家庭劇・現代劇
   - 1本に1人だけ使う
-- **Restraint節は出版社案件の生命線。** 流血・着弾・遺体を全部ここで一度に禁じておけば、各ショットで毎回書かなくて済む。単なる禁止ではなく「暴力はその後と音で示す」と代替を肯定形で書くこと
+- **Restraint節はティザー案件の生命線。** 流血・着弾・遺体を全部ここで一度に禁じておけば、各ショットで毎回書かなくて済む。単なる禁止ではなく「暴力はその後と音で示す」と代替を肯定形で書くこと
 - Audio節で「音楽は編集で足す」と宣言しておく。生成に音楽を作らせない
