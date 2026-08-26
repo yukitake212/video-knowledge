@@ -37,4 +37,4 @@
 
 - 見出しは案件に応じて増やしてよい。全編にわたって守らせたい不変則を、独立した見出しとして冒頭に昇格させる（例：Continuity＝ワンカット厳守、Weapon behaviour＝この銃はフルオート連射のみ・拳銃持ちにするな）（corpus/mecha-bug）
 - 消えない識別特徴を1つ決めて「keep in every frame」とフラグを立て、さらに各ショットの ACTION TIMING でもう一度繰り返す（corpus/sofa-scene）
-- 血をダークパープルに固定して「every drop, every splatter, every smear — never red」と列挙で念を押す例あり。色指定であると同時に、流血表現を規制に触れさせずに撮る実務的な手でもある（corpus/mecha-bug）
+- 色を全編で固定したいときは、適用範囲を列挙して念を押す例がある。一滴も、飛沫も、擦れた跡も、と場面を数え上げてから否定形で締める形。色指定であると同時に、流血表現を規制に触れさせずに撮る実務的な手でもある（2026-08 corpus/mecha-bug）

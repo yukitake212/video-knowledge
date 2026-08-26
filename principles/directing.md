@@ -16,7 +16,7 @@
 
 ## 表情
 
-- 表情は**類義語3つで三角測量**する（shy, childish, funny little smile — sweet and bashful, a small guilty-cute grin）。1語だと解釈幅が広すぎ、多すぎると散る（corpus/sofa-scene-2）
+- 表情は**類義語3つで三角測量**する。恥じらい・幼さ・おかしみ、と近い意味の語を重ねて一点に絞り込んでいる例があった。1語だと解釈幅が広すぎ、多すぎると散る（2026-08 corpus/sofa-scene-2）
 - 表情は**内的な原因**で定義すると外さない（「何も聞こえなかったかのような、少し戸惑った表情」）（corpus/sofa-scene-2）
 - 感情はラベルではなく**身体症状と、こらえている努力**で書く（涙が今にも溢れる／顔がくしゃりと歪む／顎が震える／かろうじて保っている）（corpus/backseat-bleeding）
 
