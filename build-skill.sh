@@ -142,7 +142,8 @@ for f in "${EXTRA[@]}"; do
 done
 
 inject_marker '<!-- BUILD_STAMP -->' "$STAMP" < "$SRC_SKILL" \
-  | inject_marker '<!-- FRESHNESS -->' "$FRESH_DIST" > "$DIST/skill/SKILL.md"
+  | inject_marker '<!-- FRESHNESS -->' "$FRESH_DIST" \
+  | inject_marker '<!-- GENRES -->' "$GENRES_PUBLIC" > "$DIST/skill/SKILL.md"
 
 # --- 2. Claude Code 用（ローカル版：参照を絶対パスで指す）----------------
 # 案件フォルダで起動しても解決するよう絶対パスにする。相対だと cwd 依存で切れる。
@@ -150,6 +151,7 @@ inject_marker '<!-- BUILD_STAMP -->' "$STAMP" < "$SRC_SKILL" \
 mkdir -p "$DIST/skill-local"
 inject_marker '<!-- BUILD_STAMP -->' "$STAMP" < "$SRC_SKILL" \
   | inject_marker '<!-- FRESHNESS -->' "$FRESH_LOCAL" \
+  | inject_marker '<!-- GENRES -->' "$GENRES_LOCAL" \
   | sed "s|reference/|$(esc_repl "$REPO_ROOT")/|g" > "$DIST/skill-local/SKILL.md"
 
 # --- 3. ChatGPT 用 --------------------------------------------------------
@@ -190,7 +192,8 @@ done
   echo
   strip_frontmatter "$SRC_SKILL" \
     | inject_marker '<!-- BUILD_STAMP -->' "$STAMP" \
-    | inject_marker '<!-- FRESHNESS -->' "$FRESH_DIST"
+    | inject_marker '<!-- FRESHNESS -->' "$FRESH_DIST" \
+    | inject_marker '<!-- GENRES -->' "$GENRES_PUBLIC"
 } > "$DIST/chatgpt/INSTRUCTIONS.md"
 
 {
@@ -200,7 +203,8 @@ done
   echo
   strip_frontmatter "$SRC_SKILL" \
     | inject_marker '<!-- BUILD_STAMP -->' "$STAMP" \
-    | inject_marker '<!-- FRESHNESS -->' "$FRESH_DIST"
+    | inject_marker '<!-- FRESHNESS -->' "$FRESH_DIST" \
+    | inject_marker '<!-- GENRES -->' "$GENRES_PUBLIC"
   for f in "$DIST/chatgpt/knowledge"/*.md; do
     echo; echo "---"; echo
     echo "# ファイル：$(basename "$f")"
