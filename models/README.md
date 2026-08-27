@@ -29,5 +29,9 @@
 ```
 models/
   video/   minimax-h3.md  seedance.md  wan.md
-  image/   （Phase B で作る）
+  image/   gpt-image.md  nano-banana.md  seedream.md
+           krea-2.md  soul.md  midjourney.md
 ```
+
+**Seedream（画像）と Seedance（動画）は別のモデル。** どちらも ByteDance で紛らわしいので、
+両方のファイル冒頭に相互参照を入れてある。

@@ -2,6 +2,42 @@
 
 覆った知見はここに理由とともに残す。git logは変更を記録するが、**なぜ覆ったか**は残らない。
 
+## 2026-08-28（Phase B：画像側の知見）
+
+**画像生成の知見は実質13行しか無かった。** `model-quirks.md` に3項目と `shot-schema.md` の
+型1つだけ。一方 `shot-structure.md` は「画像生成の回数は案件全体で3〜7枚」と書いていて、
+**上流固定の中心が画像生成**。投資対効果が一番高いところが一番薄かった。
+
+- 追加：principles/image-production.md。**「アセット作成」1工程では粗すぎる。**
+  画像タスクを12に分類、探索と本番を分ける、画像の3分類（証拠／方向／最終フレーム）、
+  **動きやすい画という評価軸**（画として美しいことと動画の起点として良いことは別）
+- 追加：principles/image-repair.md。**WHERE / WHAT / PRESERVE の3つを分けて書く。**
+  PRESERVE が抜けるのが最大の失敗。OpenAI と Google の公式ガイドが独立に同じことを
+  言っている（両方とも実物確認済み）。専用ツール → 局所編集 → 全体再生成の順に検討する
+- 追加：principles/world-assets.md。場所を階層で持つ。**既存の「main / reverse の2枚」を
+  否定せず、上流と下流を足した。** 30秒単発では2枚で足りる
+- 追加：models/image/ に6本。gpt-image / nano-banana / seedream / krea-2 / soul / midjourney。
+  **gpt-image と nano-banana と krea-2 は公式ドキュメントの実物を取得して確認**（Tier A）
+- **ホストとモデルの分離を実際に適用した。** platforms/higgsfield.md から Soul ファミリーを
+  models/image/soul.md へ、platforms/krea.md から Krea 2 を models/image/krea-2.md へ。
+  Phase A で作った構造がここで効いた
+- 追記：platforms/higgsfield.md に Higgsfield Edit と Cinema Studio 4.0。
+  **4.0 は制御がプロンプトからUIへ大きく移った。** 感情・照明・色・カメラが選択項目になる。
+  既存則が間違いになるのではなく、prompt-compilation.md の分類Bに該当する項目が
+  このホストでは多い、ということ。**なお解像度と尺について公式3ソースが食い違っている**
+- 追記：principles/prompt-compilation.md の分類Bを画像側へ拡張。
+  **プロンプトに書くべきことが他の経路へ移っていく**というのが、
+  「知見が増えてもプロンプトは長くならない」のもう1つの理由
+- **SKILL.md の工程3を「アセット作成」から「画像」へ改称し、3A〜3Dに分解。**
+  工程4と同じ構造にした。従来はモデルを聞いていなかった
+- **未解決を記録**：肯定形と否定形の扱いが Google と OpenAI で食い違う。Google は
+  「no cars ではなく empty street」、OpenAI は「no watermark, no extra text を明示的に書け」。
+  既存の guards.md は動画側の corpus 由来。**画像では否定の扱いがモデルによって違う可能性**
+- Midjourney は `models/image/midjourney.md` として作成。差分の推奨は candidates.md への
+  縮小だったが、**candidates.md は「分業先のツール候補」であってベースモデルの棚ではない**
+  ため、他の画像モデル5本と同じ扱いにした。契約の判断が付くまで
+  「調べたが採用していない」記録として置く
+
 ## 2026-08-28（models/ の新設）
 
 - 構造変更：`models/` を新設し、`platforms/` にあったベースモデルのファイル3本
