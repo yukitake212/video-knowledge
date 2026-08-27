@@ -214,7 +214,7 @@ sound punctuation が合わさった**一つの映像ショット**であって�
 - デフォーカスからシャープに結像
 
 最終的には **Typography × Atmospheric FX × Motion × Sound** として接続する
-（→ principles/sound.md。atmospheric-fx.md は差分2番で追加予定・未着手）。
+（→ principles/atmospheric-fx.md、principles/sound.md）。
 
 ## カット表への反映
 

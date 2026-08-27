@@ -2,6 +2,22 @@
 
 覆った知見はここに理由とともに残す。git logは変更を記録するが、**なぜ覆ったか**は残らない。
 
+## 2026-08-27（差分 1／2／4）
+
+- 追加：platforms/seedance.md。**仕様書ではなく未検証の仮説置き場。** 他人の公開プロンプトの
+  書きぶりから「作者が何を警戒しているか」を逆算した失敗モードの候補18件と、
+  生成1〜2回で切り分けられる検証計画14項目。回した結果は表の右列に日付つきで書き込み、
+  検証済みになったら model-quirks.md の自社検証側へ移す
+- 追加：principles/atmospheric-fx.md。`heavy fog` としか書けない状態から抜けるための、
+  大気の変数分解。Unreal / Blender / PBRT / Production Volume Rendering の物理モデルから
+  語彙を取る形にした。**大半が外部情報で自社未検証**
+- 追加：templates/action-sequence-schema.md。アクションのビート列の型（9ブロック）。
+  shot-schema.md（会話・芝居）の対になるファイル
+- platforms/model-quirks.md の Seedance 節から seedance.md への導線を1行追加。
+  **既存2行は model-quirks.md 側に残した。** あちらは自社の実体験、seedance.md は未検証の
+  推測で、性質が違うものを混ぜると model-quirks.md の信頼度が薄まるため
+- principles/typography.md の「atmospheric-fx.md は未着手」注記を解除
+
 ## 2026-08-27（差分 5／6／7）
 
 - 追記：principles/shot-structure.md に制御の階層化、全ビート共通の再固定、編集文法の宣言、
