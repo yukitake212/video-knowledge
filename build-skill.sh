@@ -9,6 +9,10 @@
 #   dist/skill-local/            参照を絶対パスで指す版（このマシンの Claude Code 用）
 #   dist/chatgpt/                ChatGPT のプロジェクト指示＋ナレッジ
 #
+# オプション：
+#   --with-private   video-projects/genres/*.md への絶対パスを skill-local にだけ埋める。
+#                    zip と ChatGPT 版には入れない（クライアント案件の記述を含むため）。
+#
 # reference/ は手で編集しない。ここで毎回作り直す。正本は principles/ 等。
 #
 # 前提：GNU find と bash 4.4+。macOS の標準環境では、フラット化の衝突検査
@@ -20,6 +24,15 @@ cd "$(dirname "$0")"
 SRC_SKILL="skill/SKILL.md"
 DIST="dist"
 REPO_ROOT="$(pwd)"
+PRIVATE_ROOT="${PRIVATE_ROOT:-$(cd .. && pwd)/video-projects}"
+WITH_PRIVATE=0
+
+for arg in "$@"; do
+  case "$arg" in
+    --with-private) WITH_PRIVATE=1 ;;
+    *) echo "エラー: 不明な引数: $arg" >&2; exit 1 ;;
+  esac
+done
 
 die() { echo "エラー: $*" >&2; exit 1; }
 
@@ -28,6 +41,10 @@ die() { echo "エラー: $*" >&2; exit 1; }
 command -v zip >/dev/null || die "zip が入っていない"
 command -v git >/dev/null || die "git が入っていない"
 git rev-parse --git-dir >/dev/null 2>&1 || die "gitリポジトリの中で実行すること"
+
+if [ "$WITH_PRIVATE" -eq 1 ]; then
+  [ -d "$PRIVATE_ROOT/genres" ] || die "--with-private だが $PRIVATE_ROOT/genres が無い（PRIVATE_ROOT で上書き可）"
+fi
 
 if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
   echo "警告: コミットされていない変更がある。ビルド情報が実態とずれる。"
@@ -87,6 +104,21 @@ FRESH_DIST="正本は GitHub の video-knowledge リポジトリ。このSkill�
 
 FRESH_LOCAL="**参照先はリポジトリ本体なので常に最新。** 上のビルド情報は、このSKILL.md自体を
 生成した時点を示すもので、参照先の鮮度とは関係しない。"
+
+# ジャンル別ファイルの案内。**配布版には絶対パスを埋めない。**
+GENRES_PUBLIC="  → **private（video-projects）にある。このSkillには入っていない。**
+    ユーザーに聞くか、該当ファイルを貼ってもらう"
+
+GENRES_LOCAL="$GENRES_PUBLIC"
+if [ "$WITH_PRIVATE" -eq 1 ]; then
+  GENRES_LOCAL="  → private のジャンル別ファイルを直接読む（このマシンのローカル版のみ）："
+  while IFS= read -r g; do
+    GENRES_LOCAL="$GENRES_LOCAL
+    - \`$g\`"
+  done < <(find "$PRIVATE_ROOT/genres" -maxdepth 1 -name '*.md' -type f ! -name 'README.md' | sort)
+  GENRES_LOCAL="$GENRES_LOCAL
+    どのジャンルにも当てはまらなければ飛ばす。**内容を public 側へ書き戻さない**"
+fi
 
 STAMP="**ビルド元：** \`${HASH}\`（${DATE}）／直近のコミット：${SUBJECT}"
 
