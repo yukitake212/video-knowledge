@@ -315,7 +315,7 @@ Wan は first/last frame と参照が排他。
 **結果を記録する。** 効いた／効かなかったを作業文書に残し、案件終了時に差分ファイルにして
 リポジトリへ戻す。形式は `DIFF-FORMAT.md`。
 
-検証済みになった項目は `platforms/seedance.md` から `platforms/model-quirks.md` へ移す。
+検証済みになった項目は `models/video/seedance.md` から `platforms/model-quirks.md` へ移す。
 **仮説ファイルが痩せていくのが正しい状態。**
 
 ### 案件固有の情報

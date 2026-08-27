@@ -2,6 +2,17 @@
 
 覆った知見はここに理由とともに残す。git logは変更を記録するが、**なぜ覆ったか**は残らない。
 
+## 2026-08-28（models/ の新設）
+
+- 構造変更：`models/` を新設し、`platforms/` にあったベースモデルのファイル3本
+  （minimax-h3 / seedance / wan）を `models/video/` へ移動。**ホストとモデルを混ぜない**
+  という既存の教訓を、ディレクトリ構造に反映したもの。`platforms/` の862行のうち474行が
+  実際にはモデルのファイルだった
+- `build-skill.sh`：`DIRS` に `models/video` と `models/image` を追加。
+  `find -maxdepth 1` のため、`models/` だけでは配下が拾われない
+- 参照の更新：7ファイル。`CHANGELOG.md` は履歴なので更新していない
+- **知識の追加はゼロ。** 画像側の知見は Phase B で入れる
+
 ## 2026-08-28（プロンプトの組み立て工程）
 
 - 追加：principles/prompt-compilation.md。**知見が増えてもプロンプトは長くならない。**

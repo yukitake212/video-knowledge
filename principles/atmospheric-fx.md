@@ -214,4 +214,4 @@ albedo / extinction / phase function / multiple scattering（多重散乱）を�
 - 粒子の深度指定を外すと、粉塵が前景にベタ貼りっぽくなるか
 - 上の変数のうち、実際に効くのはどれか。**効かないものは削る**
 
-（→ platforms/seedance.md の検証計画）
+（→ models/video/seedance.md の検証計画）

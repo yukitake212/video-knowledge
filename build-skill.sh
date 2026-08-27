@@ -58,7 +58,9 @@ SUBJECT="$(git log -1 --pretty=%s)"
 # --- リファレンスに入れるもの --------------------------------------------
 # 除外：CHANGELOG.md（履歴は制作時に不要）／DIFF-FORMAT.md（受け渡し用）
 #       CLAUDE.md・README.md（リポジトリ作業用）／genres/（実体はprivate）
-DIRS=(principles templates platforms)
+# ネストしたディレクトリは個別に列挙する。find は -maxdepth 1 で使っているため、
+# models/ とだけ書いても models/image/ 配下は拾われない。
+DIRS=(principles templates platforms models/video models/image)
 EXTRA=(OPERATIONS.md)
 
 # --- ユーティリティ -------------------------------------------------------
