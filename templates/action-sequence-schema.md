@@ -32,7 +32,7 @@ REFERENCE BINDING（この順で読み込む）
 @Image1 = @[名前] — [役割：look anchor / first frame anchor / 物体の同一性 /
           人物の同一性 / 場所の連続性]。[この参照が支配するもの]only。
 @Image2 = ...
-[※ 順序が効くかは未検証。→ platforms/seedance.md]
+[※ 順序が効くかは未検証。→ models/video/seedance.md]
 
 LOCKED INVARIANTS
 GEOMETRY (locked)     [位相関係。上／下／逆さ／どこから伸びて／どこを掴むか]

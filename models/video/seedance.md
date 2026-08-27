@@ -1,5 +1,7 @@
 # Seedance 2.0 / 2.5
 
+**画像の Seedream とは別のモデル。** 画像は `models/image/seedream.md`。
+
 **このファイルは2種類の情報を含む。混ぜて読まないこと。**
 
 | 節 | 性質 |
