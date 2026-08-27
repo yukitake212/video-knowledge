@@ -2,6 +2,19 @@
 
 覆った知見はここに理由とともに残す。git logは変更を記録するが、**なぜ覆ったか**は残らない。
 
+## 2026-08-28（差分 13／16）
+
+- 追加：principles/still-to-motion.md（静止画素材を動かす）。**ほぼ全部が自社未検証。**
+  書影・挿絵・提供写真・漫画原稿・先に確定させたシートなど、完成した静止画を素材として
+  動かすときの工程・演出パターン・原作からの距離。検証項目7件つき
+- **ジャンル固有ではなく素材の条件として立てた。** 元案は漫画ティザーとして genres/ へ
+  入れる想定だったが、同じ問題が漫画以外の素材でも起きる。principles/ へ出したことで
+  genres/ の2軸（物語作品／実用書 × 実写調／アニメ調）を崩さずに済んだ
+- genres/README.md：現状表に sf-action.md を追加、practical-manga.md を private へ。
+  末尾に still-to-motion.md への導線を追加
+- video-projects（private）に genres/sf-action.md と genres/practical-manga.md を新設。
+  **一般化すると価値が消える具体は private 側**という 2026-08-26 の決定に従った
+
 ## 2026-08-27（差分 1／2／4）
 
 - 追加：platforms/seedance.md。**仕様書ではなく未検証の仮説置き場。** 他人の公開プロンプトの

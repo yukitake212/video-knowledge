@@ -41,8 +41,15 @@ publicのここには枠と目次だけを残す。
 |---|---|
 | crime-mystery.md | **private（video-projects側）**。1案件分の実績あり |
 | social-drama.md | 未着手 |
-| practical-manga.md | 未着手 |
+| practical-manga.md | **private**。案件進行中。枠のみ、実績はこれから |
 | childrens-horror-anime.md | 未着手 |
+| sf-action.md | **private**。他人の公開プロンプト3本の分解のみ。自社実績なし |
 
 **空欄が見えている状態が、次に何を検証すべきかを教えてくれる。**
 案件をやったときに埋める。
+
+## 素材を動かす知見はここではない
+
+**素材を動かす知見は `principles/still-to-motion.md`。**
+「原稿が漫画である」は作品のジャンルではなく素材の条件で、どのジャンルとも組み合わさる。
+実用書マンガの案件は、`practical-manga.md` と `still-to-motion.md` の両方を読む。
