@@ -100,5 +100,8 @@
 ## 未確認
 
 - 自社では Seedance をほぼ回していない。上のすべてが未検証
+- **ホスト実装ごとに参照タイプと入力上限が違う。** Higgsfield 上の統合仕様は
+  `platforms/higgsfield.md`、DomoAI は `platforms/candidates.md` を参照。
+  ホストの案内値をモデル本体の仕様として書かないこと
 - Magnific 経由で使えるのは Seedance 1.5 Pro / 2.0 系（2026-08時点、
   → platforms/magnific.md）。2.5 が自社の環境で使えるかは確認していない
