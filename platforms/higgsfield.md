@@ -12,7 +12,7 @@
 - **Popcorn** — ストーリーボード生成。フレーム単位の視覚記憶でキャラを保つ
 - 前のクリップを文脈としてアップロードすると、同じ顔・服・環境で次のビートを生成できる
 - 顔の入れ替え系は画面に人が1人だけのとき最も精度が高い。複数いると手前の顔が優先される。参照写真と生成先の色温度を揃えると精度が上がる
-- MCP・CLI・Supercomputer Agentがあり、Academy（think→set up→generate→test）とSeedanceプロンプト用のClaude Skillも配布されている
+- MCP・CLI・Supercomputer Agentがあり、Academy（think→set up→generate→test）とClaude Skillも配布されている。**公式Skillの中身は生成API操作**（generate / soul-id / brandkit 等9本、higgsfield-ai/skills）。Seedanceのプロンプト作法は公式ブログ記事のほうで、Skill形式のものは有志製（2026-08確認）
 
 ## 契約・データ面
 
