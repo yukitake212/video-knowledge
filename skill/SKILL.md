@@ -231,7 +231,9 @@ Wan は first/last frame と参照が排他。
 
 | ショットの性質 | 読む |
 |---|---|
-| 常に | `principles/shot-structure.md`、`templates/house-style-live-action.md` |
+| 常に | `principles/shot-structure.md` |
+| **実写調で作る** | `templates/house-style-live-action.md` |
+| **完成した静止画が素材（漫画原稿・挿絵など）** | **ハウススタイルブロックを貼らない。** 素材そのものが look の正本（→ `principles/still-to-motion.md`） |
 | 芝居がある | `principles/directing.md` |
 | 破綻の心配がある | `principles/guards.md` |
 | 身体的な負荷のあるアクション | `templates/action-sequence-schema.md` |
@@ -254,7 +256,7 @@ Wan は first/last frame と参照が排他。
 
 **書けているかの検証。** ここで初めて使う。
 
-- [ ] ハウススタイルブロックを**1回だけ**貼ったか
+- [ ] ハウススタイルブロックを**1回だけ**貼ったか。**素材が原稿・イラストなら貼っていないか**
 - [ ] そのモデルの公式の式に沿っているか。**秒指定を使うかどうかもモデル次第**
 - [ ] 生成パラメータ（解像度・fps・アスペクト比）をプロンプト本文に書いていないか
 - [ ] 1区間の主要な動きは1つか。カメラの動き1つ・被写体の動作1つか
