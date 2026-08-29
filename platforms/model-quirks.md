@@ -69,6 +69,37 @@
   なかった。そこへ速さの指定を足したとき音声そのものの挙動が変わるかは確認していない。
   指定を足す変更を入れるなら、**1カットで指定なし／指定ありの両方を回して比較する**
 
+### 成立した実例 — ページ → コマへの寄り＋飛び出し
+
+静止画の漫画ページから下段のコマへ寄りながら、そのコマに描かれた人物が画面から飛び出す。
+**キーフレーム2枚の方式では3回とも破綻したが、この1文で1回で成立した**
+（2026-08-28、Magnific経由）。
+
+```
+manga page, camera starts on the whole page and moves down and in toward the bottom
+panel where a small doctor in a white coat bursts up out of a smartphone screen,
+and stops there. continuous single camera move, no cuts. the artwork itself never
+changes, panel borders stay perfectly straight, speech bubble text stays identical
+and unchanged, monochrome manga page, screentone halftone dots preserved, clean
+black ink linework, no color
+the doctor says「（台詞）」quickly, bright and cheerful, at a brisk clip.
+```
+
+**読みどころ。**
+
+- **上の3つの明示がそのまま入っている**（artwork never changes / panel borders straight /
+  speech bubble text identical）
+- `continuous single camera move, no cuts` — **H3はハードカットを苦にしないので、
+  切らせたくないなら明示する**
+- `monochrome manga page, screentone halftone dots preserved, clean black ink linework,
+  no color` は素材の画風を保持する側の指定。**ハウススタイルブロックは貼らない**
+  （`templates/house-style-live-action.md` は実写用）
+- **台詞は地の文の後ろに1行。** 速さと調子は英語で、台詞は日本語のまま「」で囲む
+- **飛び出しの動作を作り込んでいない。カメラが寄ることで動きが出ている**
+  （→ `principles/still-to-motion.md`「発生を描くなら、発生前の絵を探す」）
+
+**台詞の原文は伏せてある。** 元の差分には実際の台詞が入っていた（→ `video-corpus/diffs/`）。
+
 ## Seedance（動画）
 
 - 声の演技と表情はSeedanceのほうがうまい。H3でも両方できるがわざとらしさが残る

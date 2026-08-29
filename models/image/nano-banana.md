@@ -86,6 +86,48 @@ Google は肯定形を推奨しているが、**OpenAI は逆に「no watermark,
 
 10言語以上の多言語文字生成に対応。
 
+#### 成立した実例 — 日本語の縦型タイトルカード
+
+日本語の文字を含む9:16のタイトルカードを直接生成できた（2026-08-28 / Nano Banana Pro、1回）。
+**書体・字間・色・配置に加えて、空けておく領域**を明示している。
+
+```
+Vertical 9:16 title card for a Japanese book teaser, 1080x1920. Warm off-white paper
+background with very subtle grain, soft light from the upper left, clean and minimal,
+no illustration, no logo.
+
+All text is set in an elegant Japanese serif typeface (明朝体), cinematic and refined,
+with generous letter-spacing, crisp and perfectly legible, deep charcoal ink color,
+centered.
+
+Near the top, small and light weight:
+"（告知の一文）"
+
+Leave the entire middle of the frame completely empty — a clean rectangular area of
+plain background with a soft drop shadow suggesting a book cover will be placed there.
+No book, no cover art, no object, no placeholder image.
+
+Below that empty area, small:
+"（著者・スタッフ表記）"
+"（出版社名）"
+
+Keep the bottom 20 percent of the frame completely clear.
+
+Correct Japanese glyphs, correct kerning, no missing strokes, no invented characters,
+no English text anywhere.
+```
+
+**読みどころ。**
+
+- **最終行は字形を担保する定型として使い回せる。**
+  `Correct Japanese glyphs, correct kerning, no missing strokes, no invented characters`
+- `Leave the entire middle ... completely empty` の直後に
+  `No book, no cover art, no object, no placeholder image`。
+  **空けさせるには名指しの禁止が要る**（→「編集」節）
+- `Keep the bottom 20 percent of the frame completely clear` — 縦型のUI帯
+  （→ `principles/vertical.md`）をプロンプト側で確保している
+- 差し替える箇所は `"（…）"` の形で外に出しておくと、案件ごとに埋めるだけで済む
+
 ### 5. クリエイティブディレクターとして指示する
 
 **照明を設計する。** 「三点ソフトボックス」「硬く高コントラストのキアロスクーロ」
