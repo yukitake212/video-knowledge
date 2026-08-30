@@ -106,6 +106,10 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 **読む：** `reference/templates/shot-schema.md`、`reference/principles/sound.md`、
 `reference/principles/typography.md`。
 
+**構成論そのものの原則ファイルはまだ無い。** `reference/principles/trailer-structure.md` は
+**空であることと読むべき文献を記録しただけ**のファイルなので、急ぐなら読まなくてよい。
+下の手順とチェックリストを使う。
+
 ※ 縦型・静止画素材の条件は冒頭の「案件の条件」で判定済みのはず。
 
 ### 手順
@@ -139,7 +143,6 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 3. **「ようやく動いた」ではなく「動くはずのないものが動いた」と読める形にする**
 
 根拠は `reference/principles/workflow.md` の「静止から始めてよい場合」。
-**差分9番が未反映ならこの節は無い**が、上の3条件だけでチェックリストとしては使える。
 素材由来のカットでの扱いは `reference/principles/still-to-motion.md`。
 
 ---
