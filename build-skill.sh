@@ -249,6 +249,26 @@ if [ -n "$missing" ]; then
   echo "      差分が未反映か、ファイル名の誤り。SKILL.md 側に但し書きがあるか確認すること。"
 fi
 
+# --- 5b. 逆向きの検査（孤児ファイル）------------------------------------
+# 5 は「SKILL.md が名指しするファイルが存在するか」。逆は見えない。
+# 本文にファイルを足してルーティングを書き忘れると、参照切れは1件も出ないまま
+# 誰も辿り着けないファイルができる（2026-08-30 に実際にやった）。
+# models/ は意図的に名指ししていない（工程3C・3Dと4B・4Dで抽象的に指示している）ので除外。
+orphans=""
+for d in principles templates platforms; do
+  [ -d "$d" ] || continue
+  while IFS= read -r -d '' f; do
+    b="$(basename "$f")"
+    grep -qF "$b" "$SRC_SKILL" || orphans="$orphans $d/$b"
+  done < <(collect_md "$d")
+done
+
+if [ -n "$orphans" ]; then
+  echo
+  echo "警告: SKILL.md がどこからも名指ししていないファイル:$orphans"
+  echo "      工程のどこから読むかを決めるか、読ませない理由を SKILL.md に書くこと。"
+fi
+
 # --- 6. zip（配布版のみ。ローカル版は絶対パス入りなので含めない）--------
 ( cd "$DIST/skill" && zip -qr "../video-knowledge.zip" . )
 
