@@ -95,9 +95,12 @@ inject_marker() {
 esc_repl() { printf '%s' "$1" | sed 's/[&|\]/\&/g'; }
 
 # ディレクトリ内の .md を配列で取る。0件ならスキップ（cp の引数ゼロで落ちるため）
+# ディレクトリ直下の README.md は除く。あれは人間がリポジトリを歩くための案内で、
+# 「どの工程で読むか」の判断は SKILL.md に一本化してある。配布物に両方入れると
+# 片方だけ古くなる。ChatGPT 版のフラット化で README.md が衝突する問題も、これで起きない。
 collect_md() {
   local d=$1
-  find "$d" -maxdepth 1 -name '*.md' -type f -print0
+  find "$d" -maxdepth 1 -name '*.md' ! -name 'README.md' -type f -print0
 }
 
 # --- 鮮度についての文言 ---------------------------------------------------
@@ -161,7 +164,7 @@ inject_marker '<!-- BUILD_STAMP -->' "$STAMP" < "$SRC_SKILL" \
 mkdir -p "$DIST/chatgpt/knowledge"
 
 dupes="$(
-  { for d in "${DIRS[@]}"; do [ -d "$d" ] && find "$d" -maxdepth 1 -name '*.md' -type f -printf '%f\n'; done
+  { for d in "${DIRS[@]}"; do [ -d "$d" ] && find "$d" -maxdepth 1 -name '*.md' ! -name 'README.md' -type f -printf '%f\n'; done
     for f in "${EXTRA[@]}"; do [ -f "$f" ] && basename "$f"; done
   } | sort | uniq -d
 )"

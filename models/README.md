@@ -26,12 +26,22 @@
 
 ## 構成
 
-```
-models/
-  video/   minimax-h3.md  seedance.md  wan.md
-  image/   gpt-image.md  nano-banana.md  seedream.md
-           krea-2.md  soul.md  midjourney.md
-```
+`models/video/` と `models/image/` に個別の README は置いていない。**この表がその代わり。**
+
+| 動画モデル | |
+|---|---|
+| `video/minimax-h3.md` | MiniMax H3 / H3 Max。**現行の主力** |
+| `video/seedance.md` | Seedance 2.0 / 2.5。**未検証の推測が中心** |
+| `video/wan.md` | Wan 3.0 |
+
+| 画像モデル | |
+|---|---|
+| `image/nano-banana.md` | Google Nano Banana Pro / Nano Banana 2 |
+| `image/gpt-image.md` | OpenAI GPT Image 2 |
+| `image/seedream.md` | ByteDance Seedream 5.0 Pro |
+| `image/krea-2.md` | Krea 2 |
+| `image/soul.md` | Higgsfield Soul ファミリー |
+| `image/midjourney.md` | Midjourney |
 
 **Seedream（画像）と Seedance（動画）は別のモデル。** どちらも ByteDance で紛らわしいので、
 両方のファイル冒頭に相互参照を入れてある。
