@@ -269,6 +269,25 @@ if [ -n "$orphans" ]; then
   echo "      工程のどこから読むかを決めるか、読ませない理由を SKILL.md に書くこと。"
 fi
 
+# --- 5c. ディレクトリREADMEの取りこぼし検査 --------------------------------
+# README は配布物に入らないが、リポジトリを歩く人間の入口なので腐らせない。
+# 実際に 2026-08-30 の監査で principles/README.md が3ファイル落としていた。
+# SKILL.md への一本化を選んだぶん、こちらは一覧の完全性だけを機械で見る。
+unlisted=""
+for d in principles templates platforms; do
+  [ -f "$d/README.md" ] || continue
+  while IFS= read -r -d '' f; do
+    b="$(basename "$f")"
+    grep -qF "\`$b\`" "$d/README.md" || unlisted="$unlisted $d/$b"
+  done < <(collect_md "$d")
+done
+
+if [ -n "$unlisted" ]; then
+  echo
+  echo "警告: ディレクトリREADMEの一覧に無いファイル:$unlisted"
+  echo "      該当する README.md の表へ1行足すこと。"
+fi
+
 # --- 6. zip（配布版のみ。ローカル版は絶対パス入りなので含めない）--------
 ( cd "$DIST/skill" && zip -qr "../video-knowledge.zip" . )
 
