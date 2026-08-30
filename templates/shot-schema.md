@@ -16,7 +16,8 @@ ASSETS
 Locations: @ImageX (main face) と @ImageY (reverse face) — same room, opposite walls
 
 FIRST FRAME (locked)
-[開始構図を文章で固定。スタート画像が無いときの代替]
+[**望む冒頭構図を文章で記述する。** 実画像の first frame 入力と同じ固定ではない。
+ 時刻0の画素がMUSTなら I2V / FL2V を選ぶ → principles/prompt-compilation.md]
 
 SHOT 1 — [サイズ] / (location @ImageX; off-centre; ONLY @ImageA in frame): [弧を矢印で1行]
 LOCATION MAP  [誰がどこに、背後に何が、カメラはどちら側から]
