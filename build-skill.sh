@@ -288,6 +288,17 @@ if [ -n "$unlisted" ]; then
   echo "      該当する README.md の表へ1行足すこと。"
 fi
 
+# --- 5d. SKILL.md の参照が reference/ 付きか ------------------------------
+# 配布版はファイルを reference/ 下へ置き、ローカル版は reference/ を絶対パスへ
+# 置換する。prefix が無い参照は、配布版では存在しないパスになり、
+# ローカル版では相対のまま残って cwd 依存で切れる。
+# 2026-08-31 の点検で22箇所見つけた。参照切れ検査はファイル名だけを見るので映らない。
+# grep はマッチ0件で 1 を返す。pipefail 下では正常系なので吸収する
+# （マーカー残留検査と同じ形）。
+bare="$( { grep -oE '`(principles|templates|platforms|models)/[a-z0-9/-]+[.]md`' "$SRC_SKILL" || true; } | sort -u | tr '
+' ' ')"
+[ -z "$bare" ] || die "SKILL.md に reference/ の付いていない参照がある: ${bare}"
+
 # --- 6. zip（配布版のみ。ローカル版は絶対パス入りなので含めない）--------
 ( cd "$DIST/skill" && zip -qr "../video-knowledge.zip" . )
 

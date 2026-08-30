@@ -201,12 +201,12 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 
 | タスク | 読む |
 |---|---|
-| キャラクターシート・キャスティング | `templates/character-sheet.md` |
-| 物・小道具 | `templates/asset-card.md` |
-| 世界・場所 | `principles/world-assets.md` |
-| ショットのフレーム | `templates/shot-ir.md`、`principles/shot-structure.md` |
-| 文字が主 | `principles/typography.md` |
-| 静止画素材を動かす | `principles/still-to-motion.md` |
+| キャラクターシート・キャスティング | `reference/templates/character-sheet.md` |
+| 物・小道具 | `reference/templates/asset-card.md` |
+| 世界・場所 | `reference/principles/world-assets.md` |
+| ショットのフレーム | `reference/templates/shot-ir.md`、`reference/principles/shot-structure.md` |
+| 文字が主 | `reference/principles/typography.md` |
+| 静止画素材を動かす | `reference/principles/still-to-motion.md` |
 
 **優先度（MUST / SHOULD / MAY）をここで決める**（→ principles/prompt-compilation.md）。
 
@@ -298,20 +298,20 @@ H3 は T2VA / I2VA / FL2VA / L2VA / Ref2VA で文法が変わる。**Wan は fir
 
 | ショットの性質 | 読む |
 |---|---|
-| 常に | `principles/shot-structure.md` |
-| **実写調で作る** | `templates/house-style-live-action.md`（**12軸を1つ埋めた実例。普遍的な分類ではない** → `principles/visual-style.md`） |
-| **アニメ調で作る** | **ハウススタイルブロックは無い。** `principles/visual-style.md` の12軸から書く。**滑らかにするのが忠実化ではない** |
-| **完成した静止画が素材（漫画原稿・挿絵など）** | **ハウススタイルブロックを貼らない。** 素材そのものが look の正本（→ `principles/still-to-motion.md`） |
-| 芝居がある | `principles/directing.md` |
-| 破綻の心配がある | `principles/guards.md` |
-| 身体的な負荷のあるアクション | `templates/action-sequence-schema.md` |
-| 煙・霧・粉塵・光 | `principles/atmospheric-fx.md` |
-| 完成した静止画が素材 | `principles/still-to-motion.md` |
-| 文字カード | `principles/typography.md` |
-| 言い換えに詰まった | `templates/vocabulary.md` |
+| 常に | `reference/principles/shot-structure.md` |
+| **実写調で作る** | `reference/templates/house-style-live-action.md`（**12軸を1つ埋めた実例。普遍的な分類ではない** → `reference/principles/visual-style.md`） |
+| **アニメ調で作る** | **ハウススタイルブロックは無い。** `reference/principles/visual-style.md` の12軸から書く。**滑らかにするのが忠実化ではない** |
+| **完成した静止画が素材（漫画原稿・挿絵など）** | **ハウススタイルブロックを貼らない。** 素材そのものが look の正本（→ `reference/principles/still-to-motion.md`） |
+| 芝居がある | `reference/principles/directing.md` |
+| 破綻の心配がある | `reference/principles/guards.md` |
+| 身体的な負荷のあるアクション | `reference/templates/action-sequence-schema.md` |
+| 煙・霧・粉塵・光 | `reference/principles/atmospheric-fx.md` |
+| 完成した静止画が素材 | `reference/principles/still-to-motion.md` |
+| 文字カード | `reference/principles/typography.md` |
+| 言い換えに詰まった | `reference/templates/vocabulary.md` |
 
 **失敗ガードは、そのモデルで実際に起きたものだけ読む。** 予防的に全部入れない
-（→ `platforms/model-quirks.md`、対象モデルの `platforms/` ファイル）。
+（→ `reference/platforms/model-quirks.md`、対象モデルの `platforms/` ファイル）。
 
 ### 4D. 変換して書く
 
@@ -469,7 +469,7 @@ H3 は T2VA / I2VA / FL2VA / L2VA / Ref2VA で文法が変わる。**Wan は fir
 **結果を記録する。** 効いた／効かなかったを作業文書に残し、案件終了時に差分ファイルにして
 リポジトリへ戻す。形式は `DIFF-FORMAT.md`。
 
-検証済みになった項目は `models/video/seedance.md` から `platforms/model-quirks.md` へ移す。
+検証済みになった項目は `reference/models/video/seedance.md` から `reference/platforms/model-quirks.md` へ移す。
 **仮説ファイルが痩せていくのが正しい状態。**
 
 ### 案件固有の情報
