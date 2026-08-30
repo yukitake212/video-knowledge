@@ -2,6 +2,73 @@
 
 覆った知見はここに理由とともに残す。git logは変更を記録するが、**なぜ覆ったか**は残らない。
 
+## 2026-08-30（予告編構成論・Codexの調査5本／棚を埋めた）
+
+差分5本（`trailer-rhetoric-structure` / `source-breakdown-scene-selection` / `non-plot-shots` /
+`book-trailer-representation` / `radio-cut-trailer-sound`）。約45項目。
+**全部が他のLLM（Codex / GPT-5系）の文献調査で、自社検証は3項目だけ。**
+一昨日 `8d431c4` で足した「他のLLMの調査結果」の等級を、そのまま適用した。
+
+**当たり直した引用と、見つかったずれ**
+
+| 引用 | 結果 |
+|---|---|
+| Grøn (2014) *SoundEffects* 4(1) | **抄録を確認。** 題名・著者・"tentative book trailer typology"・"question of representation"・「読書体験の virtual quality を侵害しうる」まで一致。**5類型の名前は抄録から確認できず** |
+| Oja (2019) *Sign Systems Studies* 47(1–2) | **題名が差分と違った。** 差分は「The trailer as a model of a film and the film as a model of the trailer」としていたが、実際は **「On the concept of the deceptive trailer: Trailer as paratext and multimodal model of film」**。年は一致。**著者名は確認できず** |
+| Derek Lieu "Basic Trailer Story Structure" (2017) | **2点ずれ。** ①本人は**ゲーム予告編**の編集者。②**三幕ではなく4区分**（cold open / introduction / escalation / climax）。本人が「三幕だが頭に1つ足す」と書いている。**「title 後の button」はこの記事に出てこない** |
+| Kernan (2004) 第2章 | 出版社の本文ページは取得できず（HTTP 405）。**書誌のみ** |
+
+**埋めたもの**
+
+- `principles/trailer-structure.md` を **88行 → 252行**に。**「空であることを見せるファイル」から
+  中身のあるファイルになった。** 訴求の三分類、primary / supporting appeal、dominant による
+  不一致検査、視聴者の知識曲線、spoiler の2分類、構造の開始形、story chunk、原作の分解、
+  単位の分離、集合としての候補選定、ショット間の6関係、Kuleshov、イベント境界、
+  連続性の守る／破る、物語を進めないカットの用語分離
+- `principles/book-trailer.md`（101行）を新設。**完成映画の予告と素材条件が違う**——
+  顔・場所・出来事・音を新たに解釈して作る。原作にあるものと足したものを分ける、
+  具体化そのものを承認項目にする、表象予算、素材別の表象責任
+
+**覆したもの**
+
+- **「30秒を通して切れない音を1本敷く」を必須条件から外した。** 「連続性を優先する場合の
+  開始形」に狭め、**幕転換・shock・重要台詞・時間や場所の断絶では意図的に切る**を併記
+- **Skill 工程2の「最初のフレームに動きがあるか」を条件化した。**
+  「**媒体の視聴開始条件に合う最初の認識イベントがあるか。動きを使わないなら理由を書く**」へ。
+  劇場・書影・意図的な静止まで縛っていた
+- **`workflow.md` の「ペースだけが個別判断」を狭めた。** 列挙した5つの**技術的**破綻の話で
+  あって、**構成判断まで一括処理できるという意味ではない**
+- **pillow shot の定義を狭めた。** 前に書いた「物語を進めないカットを意図的に挟む技法」は
+  一般化しすぎで、**任意の非物語ショットの包括名に見える。** 原典は小津作品についての語
+
+**作らなかったもの**
+
+- **テンプレート4本**（`trailer-outline.md` / `trailer-brief.md` / `source-breakdown.md` /
+  `cut-pair.md`）**を新設しなかった。** スキーマの名称と項目が**調査側の提案で自社未検証**
+  であることを差分自身が明記している（「Trailer Evidence Unit という名称とスキーマは
+  本調査による提案」「representation budget という名称と0〜3案は本調査の提案」
+  「10項目という数と内容は本調査の提案」）。`templates/` は埋めて使う型を置く場所で、
+  **未検証の様式を置くと、使われたときに検証済みに見える。**
+  `principles/directing.md` の Performance Context を保留しているのと同じ判断
+- 提案されていた**欄名は各節に埋め込んだ。** 1案件で手書きして残ったものをテンプレートにする
+- **`principles/non-plot-shots.md` を作らなかった。** 原典（Burch 1979、Rybin 2021、伊藤 2013）を
+  読んでいないので、`trailer-structure.md` の1節に収めた。**用語を分けるという指摘自体は採った**
+- **Grøn の5類型の名前を書かなかった。** 抄録で確認できたのは「暫定的な類型がある」ことまで。
+  **類型があるという事実だけで当面は足りる**——案件ごとに表象を1つに決め打ちせず候補として
+  並べる運用は、名前がなくてもできる
+
+**保留**
+
+- **制作フローの順序変更（Brief → 初回breakdown → Think → 試し撮り → 構成）は採らなかった。**
+  提案の中身は妥当だが、**現行フロー自体がまだ1案件も通していない**（`workflow.md` 冒頭に
+  その注記がある）。**順序を二重に変えない。** 案として本文に併記し、1案件で試してから決める
+
+**ルーティング**
+
+- 工程2の「読む」に `trailer-structure.md`、案件条件に**原作の媒体と公式視覚素材の有無**を追加
+- 工程2の手順に**訴求の決定**と **radio cut** を挿入（手順2と3）。
+  **radio cut を工程5に置くと、画の本生成後に音声骨格の欠陥が見つかる**
+
 ## 2026-08-30（SKILL.md のルーティングが本文に追随していなかった）
 
 差分1本（`skill-routing`）。**直近2コミットの取りこぼしの指摘。全部当たっていた。**
