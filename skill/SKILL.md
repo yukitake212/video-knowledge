@@ -58,7 +58,7 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 **読む：** `reference/principles/workflow.md` だけ。
 
 **読まない：** `shot-structure.md` / `guards.md` / `directing.md` / `action-sequence-schema.md` /
-`platforms/` のすべて。
+`trailer-structure.md` / `book-trailer.md` / `platforms/` のすべて。
 
 この禁止は重要。リポジトリに自社の失敗として記録がある。
 **着想と制御を同じ一手でやろうとすると、制御が発想を食う。** 破綻しない案を1つ出して
@@ -107,32 +107,27 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 
 ## 2. 構成・カット表
 
-**読む：** `reference/templates/shot-schema.md`、`reference/principles/sound.md`、
-`reference/principles/typography.md`。
+**読む：**
 
-**台詞を使う構成なら** `reference/principles/directing.md` の
-「切り出された台詞に演技を与える」も読む。**どの台詞を使うかを決める工程はここ。**
-原作から人物の知識・目的・関係・subtext を抽出するのは、プロンプトを書く段階ではない。
-台詞が無い構成なら飛ばす。
-
-**構成の原則は** `reference/principles/trailer-structure.md`。
-訴求の三分類、視聴者の知識曲線、構造の開始形、原作の分解、ショット間の関係、
-物語を進めないカット。**ほぼ全部が外部情報で自社未検証。** 各節にそう書いてある。
-
-**原作が未映像化の書籍・漫画なら** `reference/principles/book-trailer.md` も読む。
-**完成映画の予告と素材条件が違う**——顔・場所・出来事・音を新たに解釈して作ることになる。
+| 条件 | 読む |
+|---|---|
+| 常に | `reference/principles/trailer-structure.md`（構成の原則。**ほぼ全部が外部情報で自社未検証**）／`reference/templates/shot-schema.md`／`reference/principles/sound.md`／`reference/principles/typography.md` |
+| **台詞を使う** | `reference/principles/directing.md`「切り出された台詞に演技を与える」。**どの台詞を使うか決めるのはこの工程。** プロンプトを書く段階ではない |
+| **原作が未映像化の書籍・漫画** | `reference/principles/book-trailer.md`。**顔・場所・出来事・音を新たに解釈して作ることになる** |
 
 ※ 縦型・静止画素材の条件は冒頭の「案件の条件」で判定済みのはず。
 
 ### 手順
 
-1. **試し撮りを先にする。** 3〜5カットだけ生成して強度を測る。素材を一枚も見ないうちに
+1. **訴求を決める。** 主訴求を1つ、副訴求を1つまで。工程1で出した一行と引きの型を
+   「**この予告編が何を証明するか**」まで詰める（→ trailer-structure.md）。
+   **何を試し撮りするかがここで決まる。** 構成の確定ではないので、次へ進んでよい
+2. **試し撮りをする。** 3〜5カットだけ生成して強度を測る。素材を一枚も見ないうちに
    構成を確定させると、生成してみて前提が崩れる
    - ここで書くのは**強度測定用であって完成プロンプトではない**。書き方は工程4を参照する。
      試し撮りの段階でアセットを作り込まない
    - 試し撮りの段階で**候補モデルを1〜2個に絞る**。ここで見るのは
      「この発想がこの系統で成立するか」（→ principles/prompt-compilation.md）
-2. **訴求を決める。** 主訴求を1つ、副訴求を1つまで（→ trailer-structure.md）
 3. **radio cut を作る。** 台詞・ナレーション・音楽の幕・主要効果音・無音だけを並べ、
    **画を消して論理と感情が通るか**を聞く。無音前提の納品なら文字と画の骨格で代替する
    （→ `reference/principles/sound.md`）
