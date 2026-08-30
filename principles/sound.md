@@ -195,6 +195,35 @@ speech verb / adverb の疑似ラベルとも形が一致する。
   （Interspeech 2022, pp.3373-3377）
   - **どれも再編集を挟む構造は扱っていない**
     （→ `principles/directing.md`「本編どおりの演技を再現すればよいわけではない」）
+- **サルカズムと感情については、音声チャンネルがテキストチャンネルより一桁以上多くの
+  情報を運ぶ。ただし「現在の文よりも先の長期文脈が使えないとき」という条件つき。**
+  疑問文らしさについては、韻律の追加的な寄与は比較的小さかった
+  （Yadavalli, Pimentel, Regev, Wilcox, Warstadt "What Do Prosody and Text Convey?
+  Characterizing How Meaningful Information is Distributed Across Multiple Channels",
+  ACL 2026 / arXiv:2512.16832。テレビとポッドキャストの音声を情報理論的に測ったもの）
+  - **前回この主張は出所不明として保留していた**（2026-08-29）。**論文が特定できたので入れた。**
+    上の Regev et al. と著者が重なる同じ系列の仕事
+  - **条件節を落とさないこと。** 長期文脈が使えるなら差は縮む。**「音声のほうが常に情報が多い」
+    と読むと誤り**
+- **役・場面・先行音声から演技を推論する枠組みがある。** ActorMind は役の記述を読む Eye、
+  対話の感情手がかりを解釈する Ear、感情状態を生成する Brain、対応する音声を出す Mouth の
+  4エージェント構成。7,653発話・313場面・6役のベンチマークを併せて公開している
+  （Chen, Xue, Guo "ActorMind: Emulating Human Actor Reasoning for Speech Role-Playing",
+  ACL 2026 Findings / arXiv:2604.11103）
+
+**原著未確認のまま名前だけ記録するもの。** 調査報告書が挙げているが、こちらで一次情報に
+当たっていない。**数値を引くなら先に原著へ当たること。**
+
+- BATONVOICE（emotion accuracy の数値）／CEAEval／Harness TTS（外部 planner の routing 精度。
+  **明示的な指示と暗黙の指示で大きく差が出るという報告**。原作の subtext はほぼ暗黙の指示に
+  あたるので、事実なら通常のプロンプトルータでは足りないことになる）
+- ChainTalker ／ IIICSS ／ DailyTalk ／ InstructTTS ／ PromptStyle
+
+**評価についての注意。** prosody の評価では F0・duration・intensity が主要指標で F0-RMSE が
+一般的だが、**この目的に F0-RMSE だけを使うのは危険。** 正解録音に近い pitch でも、台詞の
+目的・人物像・予告編機能が誤っている可能性がある。**音響類似度はレンダリングの評価であって、
+演技解釈の評価ではない。** 単体の MOS も、予告編タイムライン上での適合を測らない
+（→ `OPERATIONS.md`）。
 
 ## 権利
 
