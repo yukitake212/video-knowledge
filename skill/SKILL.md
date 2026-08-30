@@ -22,6 +22,10 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 
 - **原作の媒体は何か。公式の視覚素材はあるか**
   → 未映像化の書籍・漫画なら `reference/principles/book-trailer.md`
+- **媒体モードとルックが未確定か**（実写調かアニメ調か、原作素材を動かすのか）
+  → `reference/principles/visual-style.md`。**「アニメか実写か」を二択で先に決めない。**
+  原作の識別的な文法を抽出してから、それを最も損失少なく実装できるモードを選ぶ
+  （**このファイルは自社未検証**）
   （**顔・場所・出来事・音を新たに解釈して作ることになる。** 完成映画の予告と条件が違う。
   下の静止画素材の判定とは別——あちらは素材処理、こちらは表象範囲）
 - 縦型（9:16）で納品するか → `reference/principles/vertical.md`
@@ -58,7 +62,8 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 **読む：** `reference/principles/workflow.md` だけ。
 
 **読まない：** `shot-structure.md` / `guards.md` / `directing.md` / `action-sequence-schema.md` /
-`trailer-structure.md` / `book-trailer.md` / `platforms/` のすべて。
+`trailer-structure.md` / `book-trailer.md` / `cross-media-style-translation.md` /
+`platforms/` のすべて。
 
 この禁止は重要。リポジトリに自社の失敗として記録がある。
 **着想と制御を同じ一手でやろうとすると、制御が発想を食う。** 破綻しない案を1つ出して
@@ -114,6 +119,7 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 | 常に | `reference/principles/trailer-structure.md`（構成の原則。**ほぼ全部が外部情報で自社未検証**）／`reference/templates/shot-schema.md`／`reference/principles/sound.md`／`reference/principles/typography.md` |
 | **台詞を使う** | `reference/principles/directing.md`「切り出された台詞に演技を与える」。**どの台詞を使うか決めるのはこの工程。** プロンプトを書く段階ではない |
 | **原作が未映像化の書籍・漫画** | `reference/principles/book-trailer.md`。**顔・場所・出来事・音を新たに解釈して作ることになる** |
+| **原作から画を起こす**（コマをそのまま使わない） | `reference/principles/cross-media-style-translation.md`。preserve / translate / invent / omit の4分類。**筋を進めないカットの機能もここ** |
 
 ※ 縦型・静止画素材の条件は冒頭の「案件の条件」で判定済みのはず。
 
@@ -166,6 +172,9 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 この工程は4段階ある。**順に進める。**
 
 ### 3A. 何を作っているか決める
+
+**媒体モードとルックが未確定なら先に** `reference/principles/visual-style.md`。
+**時間文法（止め・コマ打ち・部分運動）はここで決めないと工程4で取り返せない。**
 
 12のタスクのどれか（→ image-production.md）。**判定できないときはユーザーに聞く。**
 
@@ -267,7 +276,8 @@ Wan は first/last frame と参照が排他。
 | ショットの性質 | 読む |
 |---|---|
 | 常に | `principles/shot-structure.md` |
-| **実写調で作る** | `templates/house-style-live-action.md` |
+| **実写調で作る** | `templates/house-style-live-action.md`（**12軸を1つ埋めた実例。普遍的な分類ではない** → `principles/visual-style.md`） |
+| **アニメ調で作る** | **ハウススタイルブロックは無い。** `principles/visual-style.md` の12軸から書く。**滑らかにするのが忠実化ではない** |
 | **完成した静止画が素材（漫画原稿・挿絵など）** | **ハウススタイルブロックを貼らない。** 素材そのものが look の正本（→ `principles/still-to-motion.md`） |
 | 芝居がある | `principles/directing.md` |
 | 破綻の心配がある | `principles/guards.md` |
