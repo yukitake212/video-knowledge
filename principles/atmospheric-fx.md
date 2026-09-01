@@ -149,6 +149,18 @@ albedo / extinction / phase function / multiple scattering（多重散乱）を�
 
 ---
 
+## 数値の単位を決めておく
+
+**大気は % と m で書く。**「薄い霧」ではなく `fog density 40%`、`haze visible at 15 meters depth`。
+
+**ショットをまたいで段階的に上げる。** ショット1で20% → 2で40% → 3で60%。
+**同じ濃度を繰り返すと、進行が止まって見える。**
+
+**ホワイトバランスはケルビンで、シーン内で固定する**（3200 / 4000 / 5600 / 8500K）。
+場面の気分に合わせて決め、**シーンの途中で変えない。**
+
+（2026-09-02 / 公開Skill `higgsfield-seedance-prompt`（Seedance 2.0 向け・著者名なし・出所表記なし）から。`corpus/research/higgsfield-seedance-skill-2026-09/`。**自社未検証**）
+
 ## 変数の一覧
 
 **全部を書くのではない。** どの変数が実際に効くかを検証して削っていく。
