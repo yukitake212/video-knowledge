@@ -6,6 +6,10 @@ Seedance 2向けの公開プロンプトを分解（2026-08 / corpus/sofa-scene,
 全体スタイル→アセット台帳→ショットの3部構成で、**各ショットは同じ5見出しを毎回繰り返す。**
 5見出しはそのままカット表の列にできる。
 
+**`off-centre` を型に固定しない。** 実写調の既定は off-centre だが、
+**縦型では中央寄りが要る。** 衝突するので**案件ヘッダで先に決める**
+（→ `principles/vertical.md` と `principles/directing.md`）。
+
 ```
 [templates/house-style-live-action.md を1回だけ貼る。**実写調のときだけ**。
  素材が漫画原稿・挿絵なら貼らない → principles/still-to-motion.md]
@@ -19,7 +23,7 @@ FIRST FRAME (locked)
 [**望む冒頭構図を文章で記述する。** 実画像の first frame 入力と同じ固定ではない。
  時刻0の画素がMUSTなら I2V / FL2V を選ぶ → principles/prompt-compilation.md]
 
-SHOT 1 — [サイズ] / (location @ImageX; off-centre; ONLY @ImageA in frame): [弧を矢印で1行]
+SHOT 1 — [サイズ] / (location @ImageX; **配置は案件ヘッダで決めた方針**; ONLY @ImageA in frame): [弧を矢印で1行]
 LOCATION MAP  [誰がどこに、背後に何が、カメラはどちら側から]
 FORMAT MODE   [One continuous take, ~Ns, real-time, no cut / Hard CUT from Shot N]
 OPTICS        [レンズ・絞り・DoF]
