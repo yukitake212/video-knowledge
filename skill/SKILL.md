@@ -25,6 +25,11 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 - **案件のロックブロックを先に作ったか** → `reference/templates/lock-blocks.md`
   （**声・参照のコネクタ・禁止・命名。一度書いて以後そのまま貼る。**
   読んで判断するものは飛ばせるが、貼るものは飛ばすと出力が不完全になる）
+- **案件ヘッダを1枚書いたか** → `reference/templates/trailer-brief.md`
+  （訴求・支配軸のずれ・開示・媒体条件・具体化の範囲・**配置の方針**。
+  **カットを1つも作る前に。自社未検証なので、埋まらない欄は消してよい**）
+- **本番参照や学習に第三者の素材を使うか** → `reference/templates/style-reference-card.md`
+  （**許諾の根拠が空の素材を本番へ流さない**。→ `reference/OPERATIONS.md`）
 - **媒体モードとルックが未確定か**（実写調かアニメ調か、原作素材を動かすのか）
   → `reference/principles/visual-style.md`。**「アニメか実写か」を二択で先に決めない。**
   原作の識別的な文法を抽出してから、それを最も損失少なく実装できるモードを選ぶ
@@ -127,6 +132,7 @@ AI映像制作の自社知見。**このファイルは手順とチェックリ�
 | 条件 | 読む |
 |---|---|
 | 常に | `reference/principles/trailer-structure.md`（構成の原則。**ほぼ全部が外部情報で自社未検証**）／`reference/templates/shot-schema.md`／`reference/principles/sound.md`／`reference/principles/typography.md` |
+| **原作がある** | `reference/templates/source-breakdown.md`。**選ぶ前に分解する。** 印象的な画を直接出すだけだと候補が偏る |
 | **台詞を使う** | `reference/principles/directing.md`「切り出された台詞に演技を与える」。**どの台詞を使うか決めるのはこの工程。** プロンプトを書く段階ではない |
 | **原作が未映像化の書籍・漫画** | `reference/principles/book-trailer.md`。**顔・場所・出来事・音を新たに解釈して作ることになる** |
 | **原作から画を起こす**（コマをそのまま使わない） | `reference/principles/cross-media-style-translation.md`。preserve / translate / invent / omit の4分類。**筋を進めないカットの機能もここ** |
